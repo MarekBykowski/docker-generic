@@ -1,12 +1,18 @@
 cat << 'EOF'
-Welcome to the Docker b2b container!
+Welcome to Marek's priv Docker
 
-Within this container you can run `Avery B2B` on the same machine.
-Source `enviroment_setup.sh` and folow the howto.
-`source ~/avery/2023_1215/avery_qemu-docker/enviroment_setup.sh`
+Dockerfile and image are intended to be used without and behind the proxy.
+
+For proxy:
+- Dockerfile::`COPY apt.conf /etc/apt/`
+- .bash_aliases::exports proxies.
+
+Without proxy:
+- Dockerfile::`#COPY apt.conf /etc/apt/` (comment out)
+- .bash_aliases::Prevent from exporting, eg. `if [[ ! : ]]; then <proxy>; fi`
 EOF
 
-if [[ : ]]; then
+if [[ ! : ]]; then
 export https_proxy=http://proxy-us.intel.com:912
 export HTTPS_PROXY=$https_proxy
 export http_proxy=http://proxy-us.intel.com:911

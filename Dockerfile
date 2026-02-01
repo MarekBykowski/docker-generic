@@ -26,7 +26,7 @@ echo "${username}:${password}" | chpasswd
 EOF
 
 # This apt-conf includes the http proxy used in Intel. Run it only for Intel.
-COPY apt.conf /etc/apt/
+#COPY apt.conf /etc/apt/
 
 RUN set -e \
   && apt-get update -y \
