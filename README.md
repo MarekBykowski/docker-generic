@@ -2,7 +2,7 @@ Read and run:
 - `docker.sh` for Docker image creation and management
 - `singularity.sh` for Docker to Singularity creation and running
 
-If you are behind proxy make this changes so the container to work behind it
+If you are behind the proxy make this changes so the container can work there
 ```
 $ git diff
 diff --git a/.bash_aliases b/.bash_aliases
