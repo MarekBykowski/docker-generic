@@ -29,7 +29,7 @@ EOF
 #COPY apt.conf /etc/apt/
 
 RUN set -e \
-  && apt-get update -y \
+  && apt-get -o Acquire::Retries=5 update \
   \
   # essentially Yocto tools
   && apt-get install -y \
@@ -83,7 +83,7 @@ RUN echo "dash dash/sh boolean false" | debconf-set-selections
 RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
 
 # Install firefox
-RUN apt-get -y update && apt-get -y install firefox
+RUN apt-get -o Acquire::Retries=5 update && apt-get -y install firefox
 
 # add my sys config files
 COPY etc /etc
