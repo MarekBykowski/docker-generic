@@ -4,7 +4,7 @@ Read and run:
 
 If you are behind proxy make this changes so the container to work behind it
 ```
-[mbykowsx@GNR-JF04-5122 docker-generic]$ git diff
+$ git diff
 diff --git a/.bash_aliases b/.bash_aliases
 index fbd6c0f..1acbe89 100644
 --- a/.bash_aliases
